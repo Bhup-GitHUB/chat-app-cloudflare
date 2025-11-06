@@ -1,0 +1,16 @@
+name = "hono-chat"
+main = "src/index.ts"
+compatibility_date = "2025-11-06"
+
+# Serve files from /public
+assets = { directory = "public" }
+
+# Durable Object binding for chat rooms
+[[durable_objects.bindings]]
+name = "ROOM"
+class_name = "ChatRoom"
+
+# First deploy migration
+[[migrations]]
+tag = "v1"
+new_classes = ["ChatRoom"]
